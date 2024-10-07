@@ -9,7 +9,17 @@ jobs:
   deploy-to-stage:
     runs-on: ubuntu-latest
     steps: 
-      - name: Check for version chnage
+      - name: Setup  Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          regitry-utl: 'https//registry.npmjs.org/'
+
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          
+      - name: Check for version change
         id: version_changed
         uses: EndBug/version-check@v2
         with:
