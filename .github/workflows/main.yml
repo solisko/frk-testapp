@@ -6,8 +6,16 @@ on:
     paths:
       - 'package.json'
 jobs:
-  any-job:
+  deploy-to-stage:
     runs-on: ubuntu-latest
     steps: 
-      - name: any-step
+      - name: Check for version chnage
+        id: version_changed
+        uses: EndBug/version-check@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN}}
+          
+      - name: hello-world
         run: echo "Hello World"
+
+
