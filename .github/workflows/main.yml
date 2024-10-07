@@ -13,7 +13,7 @@ jobs:
         id: version_changed
         uses: EndBug/version-check@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN}}
+          token: ${{ secrets.GITHUB_TOKEN }}
           
       - name: hello-world
         run: echo "Hello World"
